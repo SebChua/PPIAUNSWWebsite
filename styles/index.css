@@ -1,0 +1,38 @@
+body {
+    background-color: #E5E5E5 !important;
+    overflow-x: hidden;
+}
+
+/*--------- Navbar -------*/
+.navbar {
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.6) !important;
+}
+
+.navbar-brand img {
+    height: 4rem;
+}
+
+.navbar-nav li {
+    padding-right: 0.7rem;
+}
+/*--------- End Navbar -------*/
+
+
+/*--------- Slider -------*/
+.carousel-item {
+    max-height: 100vh;
+}
+
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+/*--------- End Slider -------*/
+
+
+#logo {
+    max-height: 50px;
+}
