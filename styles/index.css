@@ -18,7 +18,6 @@ body {
 }
 /*--------- End Navbar -------*/
 
-
 /*--------- Slider -------*/
 .carousel-item {
     max-height: 100vh;
@@ -29,8 +28,11 @@ body {
     height: 30px !important;
     width: 30px !important;
 }
-
 /*--------- End Slider -------*/
+
+.about-gallery {
+    background-color: #312F2F;
+}
 
 
 #logo {
