@@ -52,7 +52,7 @@
     </nav>
 
   <!-- Image Slider -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -76,7 +76,8 @@
           <img class="d-block w-100" src="../assets/sliderimg/slide4.jpg" alt="Fourth slide">
         </div>
     </div>
-
+      
+    <!-- Carousel Controls -->
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -90,21 +91,38 @@
   <!-- Welcome -->
   <div id="welcome" class="container-fluid">
     <div class="row">
-      <div class="about-text col-6">
-        <h2>Welcome to PPIA UNSW</h2>
+      <div id="welcome-text" class="col-6">
+        <h1>Welcome to PPIA UNSW</h1>
         <p>Perhimpunan Pelajar Indonesia Australia (PPIA) UNSW is an organisation with 
           the goal of strengthening the fraternity among Indonesian students at UNSW and 
           introducing the diversity of Indonesian culture to other students on campus. 
           We aim to create exciting events that are both fun and beneficial for members 
           of our society!</p>
       </div>
-      <div class="about-gallery col-6">
+      <div id="welcome-gallery" class="col-6">
         <h1>Hello World</h1>
       </div>
     </div>
   </div>
 
+  <!-- Follow Us -->
+  <div id="follow-us" class="container-fluid">
+    <div class="row">
+      <div id="social-col" class="col-6 text-center">
+        <h1>Follow Us</h1>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-facebook-f"></i></li>
+        </ul>
+      </div>
+      <div id="insta-gallery" class="col-6">
+        <h1>Hello World</h1>
+      </div>
+    </div>
+  </div>
 
+  <script type="text/javascript" src="../scripts/index.js"></script>
 
 </body>
 </html>

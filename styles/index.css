@@ -6,11 +6,12 @@ body {
 /*--------- Navbar -------*/
 .navbar {
     font-size: 0.9rem;
-    background: rgba(0,0,0,0.6) !important;
+    /* background: rgba(0,0,0,0.3) !important; */
 }
 
 .navbar-brand img {
-    height: 4rem;
+    height: 3.5rem;
+    padding-left: 40px;
 }
 
 .navbar-nav li {
@@ -21,6 +22,7 @@ body {
 /*--------- Slider -------*/
 .carousel-item {
     max-height: 100vh;
+    background-color: red !important;
 }
 
 .carousel-control-next-icon, 
@@ -28,13 +30,36 @@ body {
     height: 30px !important;
     width: 30px !important;
 }
+
+#overlay {
+    background-color: red;
+}
 /*--------- End Slider -------*/
 
-.about-gallery {
+/*--------- Welcome Section -------*/
+#welcome {
+    height: 80vh;
+    background-color: red;
+}
+
+#welcome-text {
+    /* padding: 0 100px 0 100px; */
+    background-color: green;
+}
+
+#welcome-text h1 {
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+#welcome-text p {
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+#welcome-gallery {
     background-color: #312F2F;
 }
+/*--------- End Welcome Section -------*/
 
 
-#logo {
-    max-height: 50px;
-}
