@@ -79,4 +79,16 @@ body {
 }
 /*--------- End Welcome Section -------*/
 
+/*--------- Follow Section -------*/
+#social-col {
+    background-color: blue;
+}
 
+#insta-gallery {
+    background-color: gold;
+}
+
+#social-row a {
+    font-size: 35px;
+}
+/*--------- End Follow Section -------*/
