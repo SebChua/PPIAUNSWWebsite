@@ -81,6 +81,11 @@ var InstaGallery = /** @class */ (function () {
         container.append(this._prevButton, this._nextButton, this._galleryContainer);
         this.displayPhotos(0);
     };
+    InstaGallery.prototype._buildPostElem = function (post) {
+        var post_elem = $('<a>').attr('href', post.insta_url).attr('target', '_blank');
+        $('<img>').attr('src', post.img_url).addClass('insta-post animated fadeIn').appendTo(post_elem);
+        return post_elem;
+    };
     // Pre-condition: startIndex >= 0
     InstaGallery.prototype.displayPhotos = function (startIndex) {
         var _this = this;
@@ -89,17 +94,13 @@ var InstaGallery = /** @class */ (function () {
             this._getPhotos()
                 .then(function () {
                 for (var i = startIndex; i < Math.min(_this._imagesLoaded.length, startIndex + _this._displayQty); i++) {
-                    var link_elem = $('<a>').attr('href', _this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(_this._galleryContainer);
-                    $('<img>').attr('src', _this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                    $('<br>').appendTo($('body'));
+                    _this._buildPostElem(_this._imagesLoaded[i]).appendTo(_this._galleryContainer);
                 }
             });
         }
         else {
             for (var i = startIndex; i < startIndex + this._displayQty; i++) {
-                var link_elem = $('<a>').attr('href', this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(this._galleryContainer);
-                $('<img>').attr('src', this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                $('<br>').appendTo($('body'));
+                this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
             }
         }
     };

@@ -102,6 +102,12 @@ class InstaGallery {
         this.displayPhotos(0);
     }
 
+    private _buildPostElem(post: InstaPost): JQuery {
+        let post_elem = $('<a>').attr('href', post.insta_url).attr('target', '_blank');
+        $('<img>').attr('src', post.img_url).addClass('insta-post animated fadeIn').appendTo(post_elem);
+        return post_elem;
+    }
+
     // Pre-condition: startIndex >= 0
     displayPhotos(startIndex: number) {
         // Only request for more photos when we need them
@@ -109,16 +115,12 @@ class InstaGallery {
             this._getPhotos()
             .then(() => {
                 for (let i = startIndex; i < Math.min(this._imagesLoaded.length, startIndex + this._displayQty); i++) {
-                    let link_elem = $('<a>').attr('href', this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(this._galleryContainer);
-                    $('<img>').attr('src', this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                    $('<br>').appendTo($('body'));
+                    this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
                 }
             });
         } else {
             for (let i = startIndex; i < startIndex + this._displayQty; i++) {
-                let link_elem = $('<a>').attr('href', this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(this._galleryContainer);
-                $('<img>').attr('src', this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                $('<br>').appendTo($('body'));
+                this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
             }
         }
     }
