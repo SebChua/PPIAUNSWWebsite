@@ -1,22 +1,7 @@
 $(document).ready(function () {
-    console.log('Hello world');
-    // updateSliderImage();
-    // let gallery = new InstaGallery(9);
-    new InstaGallery(9).addToContainer($('#insta-gallery'));
+    new InstaGallery(9).addToContainer($('#content-section'));
 });
-function updateSliderImage() {
-    var img_ctr = 0;
-    setInterval(function () {
-        img_ctr = (img_ctr % 4) + 1;
-        var img_url = '../assets/sliderimg/slide' + img_ctr + '.jpg';
-        $('#slider-img').addClass('animated fadeOut slow');
-        $("#slider-img").attr("src", img_url);
-        $('#slider-img').removeClass('animated fadeOut slow');
-        $('#slider-img').addClass('animated fadeIn slow');
-        console.log('hello world');
-    }, 5000);
-}
-var InstaGallery = /** @class */ (function () {
+var InstaGallery = (function () {
     function InstaGallery(postsToDisplay) {
         var config = {
             client_id: '71f50f8d337443099d335a66e4ba8265',
@@ -63,7 +48,6 @@ var InstaGallery = /** @class */ (function () {
         return fetch(request_url).then(function (response) {
             return response.json();
         }).then((function (responseJSON) {
-            // Got a Successful Response
             for (var _i = 0, _a = responseJSON.data; _i < _a.length; _i++) {
                 var data = _a[_i];
                 _this._imagesLoaded.push({
@@ -73,7 +57,6 @@ var InstaGallery = /** @class */ (function () {
             }
             _this._nextUrl = responseJSON.pagination.nextUrl;
         }))["catch"](function (err) {
-            // Error Retrieving Response
             $('<p>').text(JSON.stringify(err)).appendTo(_this._galleryContainer);
         });
     };
@@ -81,10 +64,8 @@ var InstaGallery = /** @class */ (function () {
         container.append(this._prevButton, this._nextButton, this._galleryContainer);
         this.displayPhotos(0);
     };
-    // Pre-condition: startIndex >= 0
     InstaGallery.prototype.displayPhotos = function (startIndex) {
         var _this = this;
-        // Only request for more photos when we need them
         if (startIndex + this._displayQty > this._imagesLoaded.length) {
             this._getPhotos()
                 .then(function () {
@@ -105,3 +86,4 @@ var InstaGallery = /** @class */ (function () {
     };
     return InstaGallery;
 }());
+//# sourceMappingURL=InstaGallery.js.map
