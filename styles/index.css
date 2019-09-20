@@ -94,21 +94,23 @@ body {
 }
 
 #insta-gallery {
-    background-color: red;
+    /* background-color: red; */
     position: relative;
     margin: auto;
-    width: 100%;
+    width: 570px;
     padding: 30px 0px;
 }
 
 #prev-btn {
-    font-size: 30px;
+    font-size: 50px;
     border: none;
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    margin-left: -55px;
     z-index: 10;
+    background-color: transparent;
 }
 
 #prev-btn:focus {
@@ -116,14 +118,16 @@ body {
 }
 
 #next-btn {
-    font-size: 30px;
+    font-size: 50px;
     border: none;
     cursor: pointer;
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
     right: 0;
+    margin-right: -55px;
     z-index: 10;
+    background-color: transparent;
 }
 
 #next-btn:focus {
