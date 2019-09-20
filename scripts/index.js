@@ -1,8 +1,11 @@
 $(document).ready(function () {
-    console.log('Hello world');
-    // updateSliderImage();
-    // let gallery = new InstaGallery(9);
     new InstaGallery(9).addToContainer($('#insta-gallery'));
+    new BootstrapCarousel([
+        '../assets/sliderimg/slide1.jpg',
+        '../assets/sliderimg/slide2.jpg',
+        '../assets/sliderimg/slide3.jpg',
+        '../assets/sliderimg/slide4.jpg'
+    ]).addToContainer($('#welcome-gallery'));
 });
 function updateSliderImage() {
     var img_ctr = 0;
@@ -105,4 +108,29 @@ var InstaGallery = /** @class */ (function () {
         }
     };
     return InstaGallery;
+}());
+var BootstrapCarousel = /** @class */ (function () {
+    function BootstrapCarousel(imgUrls) {
+        this._imgUrls = imgUrls;
+    }
+    BootstrapCarousel.prototype.addToContainer = function (container) {
+        var carousel_container = $('<div>').attr({
+            'id': 'img-gallery',
+            'data-ride': 'carousel'
+        }).addClass('carousel slide carousel-fade');
+        var carousel_content = $('<div>').addClass('carousel-inner').appendTo(carousel_container);
+        for (var i = 0; i < this._imgUrls.length; i++) {
+            var imgDiv = $('<div>').addClass('carousel-item');
+            if (i == 0) {
+                imgDiv.addClass('active');
+            }
+            $('<img>').attr({
+                'src': this._imgUrls[i],
+                'alt': 'Image ' + (i + 1)
+            }).addClass('d-block w-100').appendTo(imgDiv);
+            carousel_content.append(imgDiv);
+        }
+        container.append(carousel_container);
+    };
+    return BootstrapCarousel;
 }());
