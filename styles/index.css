@@ -22,7 +22,6 @@ h1 {
 /* #region Navbar */
 .navbar {
     font-size: 0.9rem;
-    /* background: rgba(0,0,0,0.3) !important; */
 }
 
 .navbar-brand img {
@@ -178,6 +177,18 @@ h1 {
 /* #endregion Follow */
 
 @media only screen and (max-width: 540px) {
+    .navbar-brand img {
+        padding: 0;
+    }
+
+    #hero-message h1 {
+        font-size: 4rem;
+    }
+
+    #hero-message h2 {
+        font-size: 1.1rem;
+    }
+    
     #welcome-gallery {
         padding: 0;
     }
