@@ -7,18 +7,18 @@ $(document).ready(function () {
         '../assets/sliderimg/slide4.jpg'
     ]).addToContainer($('#welcome-gallery'));
 });
-function updateSliderImage() {
-    var img_ctr = 0;
-    setInterval(function () {
-        img_ctr = (img_ctr % 4) + 1;
-        var img_url = '../assets/sliderimg/slide' + img_ctr + '.jpg';
-        $('#slider-img').addClass('animated fadeOut slow');
-        $("#slider-img").attr("src", img_url);
-        $('#slider-img').removeClass('animated fadeOut slow');
-        $('#slider-img').addClass('animated fadeIn slow');
-        console.log('hello world');
-    }, 5000);
-}
+// function updateSliderImage() {
+//     let img_ctr = 0;
+//     setInterval(() => {
+//         img_ctr = (img_ctr % 4) + 1;
+//         let img_url = '../assets/sliderimg/slide' + img_ctr + '.jpg';
+//         $('#slider-img').addClass('animated fadeOut slow')
+//         $("#slider-img").attr("src", img_url);
+//         $('#slider-img').removeClass('animated fadeOut slow')
+//         $('#slider-img').addClass('animated fadeIn slow')
+//         console.log('hello world');
+//     }, 5000);
+// }
 var InstaGallery = /** @class */ (function () {
     function InstaGallery(postsToDisplay) {
         var config = {
@@ -26,7 +26,7 @@ var InstaGallery = /** @class */ (function () {
             client_secret: '5e5336a144e446aa8bcae5105b73f99d',
             redirect_uri: 'http://ppia-unsw.org/',
             response_type: 'code',
-            access_token: '1161706668.71f50f8.4acfb1cd60eb47ccbfadcf26c34f0e84'
+            access_token: '1161706668.71f50f8.b022d5c8d1ee43678fcf45eb16968396'
         };
         this._prevButton = $('<button>').attr({
             'id': 'prev-btn',
@@ -94,12 +94,18 @@ var InstaGallery = /** @class */ (function () {
         var _this = this;
         // Only request for more photos when we need them
         if (startIndex + this._displayQty > this._imagesLoaded.length) {
+            var placeholder = $('<div>').addClass('spinner-border').css({
+                'width': '3rem',
+                'height': '3rem'
+            });
+            this._galleryContainer.append(placeholder);
             this._getPhotos()
                 .then(function () {
                 for (var i = startIndex; i < Math.min(_this._imagesLoaded.length, startIndex + _this._displayQty); i++) {
                     _this._buildPostElem(_this._imagesLoaded[i]).appendTo(_this._galleryContainer);
                 }
             });
+            this._galleryContainer.append(placeholder);
         }
         else {
             for (var i = startIndex; i < startIndex + this._displayQty; i++) {

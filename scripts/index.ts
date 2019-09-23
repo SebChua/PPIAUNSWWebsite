@@ -8,20 +8,20 @@ $(document).ready(() => {
     ]).addToContainer($('#welcome-gallery'));
 });
 
-function updateSliderImage() {
-    let img_ctr = 0;
+// function updateSliderImage() {
+//     let img_ctr = 0;
 
-    setInterval(() => {
-        img_ctr = (img_ctr % 4) + 1;
-        let img_url = '../assets/sliderimg/slide' + img_ctr + '.jpg';
+//     setInterval(() => {
+//         img_ctr = (img_ctr % 4) + 1;
+//         let img_url = '../assets/sliderimg/slide' + img_ctr + '.jpg';
         
-        $('#slider-img').addClass('animated fadeOut slow')
-        $("#slider-img").attr("src", img_url);
-        $('#slider-img').removeClass('animated fadeOut slow')
-        $('#slider-img').addClass('animated fadeIn slow')
-        console.log('hello world');
-    }, 5000);
-}
+//         $('#slider-img').addClass('animated fadeOut slow')
+//         $("#slider-img").attr("src", img_url);
+//         $('#slider-img').removeClass('animated fadeOut slow')
+//         $('#slider-img').addClass('animated fadeIn slow')
+//         console.log('hello world');
+//     }, 5000);
+// }
 
 class InstaGallery {
     private _prevButton: JQuery;
@@ -41,7 +41,7 @@ class InstaGallery {
             client_secret: '5e5336a144e446aa8bcae5105b73f99d',
             redirect_uri: 'http://ppia-unsw.org/',
             response_type: 'code',
-            access_token: '1161706668.71f50f8.4acfb1cd60eb47ccbfadcf26c34f0e84'
+            access_token: '1161706668.71f50f8.b022d5c8d1ee43678fcf45eb16968396'
         };
 
         this._prevButton = $('<button>').attr({
@@ -82,6 +82,8 @@ class InstaGallery {
 
     private _getPhotos() {
         let request_url = this._nextUrl ? this._nextUrl : this._apiUrl;
+
+
     
         return fetch(request_url).then(response => {
             return response.json();
@@ -115,12 +117,20 @@ class InstaGallery {
     displayPhotos(startIndex: number) {
         // Only request for more photos when we need them
         if (startIndex + this._displayQty > this._imagesLoaded.length) {
+            let placeholder = $('<div>').addClass('spinner-border').css({
+                'width': '3rem',
+                'height': '3rem',
+            });
+            
+            this._galleryContainer.append(placeholder);
             this._getPhotos()
             .then(() => {
                 for (let i = startIndex; i < Math.min(this._imagesLoaded.length, startIndex + this._displayQty); i++) {
                     this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
                 }
             });
+
+            this._galleryContainer.append(placeholder);
         } else {
             for (let i = startIndex; i < startIndex + this._displayQty; i++) {
                 this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);

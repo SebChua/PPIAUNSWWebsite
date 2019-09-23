@@ -3,7 +3,23 @@ body {
     overflow-x: hidden;
 }
 
-/*--------- Navbar -------*/
+h1 {
+    text-transform: capitalize;
+    font-family: 'Nunito', 'sans-serif' !important;
+    font-weight: 700;
+}
+
+.text-block h1 {
+    font-size: 2em;
+}
+
+.text-block p {
+    font-family: 'SF Pro Text';
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+/* #region Navbar */
 .navbar {
     font-size: 0.9rem;
     /* background: rgba(0,0,0,0.3) !important; */
@@ -17,11 +33,16 @@ body {
 .navbar-nav li {
     padding-right: 0.7rem;
 }
-/*--------- End Navbar -------*/
+/* #endregion Navbar */
 
-/*--------- Slider -------*/
+/* #region Hero Section */
 #main-slider {
     position: relative;
+    background-image: url('../assets/sliderimg/slide1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 #main-slider .overlay {
     width: 100%;
@@ -29,7 +50,15 @@ body {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
-    padding-top: 22%;
+}
+
+#hero-message {
+    position: absolute;
+    /* background-color: red; */
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: 100%;
 }
 
 #hero-message h2 {
@@ -40,7 +69,7 @@ body {
 }
 
 #hero-message h1 {
-    font-family: 'Helvetica';
+    font-family: 'Helvetica' !important;
     font-weight: bold;
     font-size: 100px;
     color: white;
@@ -50,51 +79,23 @@ body {
 #slider-img {
     display: block;
     width: 100%;
+    /* min-height: 100vh; */
 }
-/*--------- End Slider -------*/
+/* #endregion Hero Section */
 
-/*--------- Welcome Section -------*/
-#welcome {
-    height: 80vh;
-    background-color: red;
-}
-
-#welcome-text {
-    /* padding: 0 100px 0 100px; */
-    background-color: green;
-}
-
-#welcome-text h1 {
-    text-transform: uppercase;
-    font-size: 36px;
-}
-
-#welcome-text p {
-    line-height: 1.5;
-    font-size: 18px;
-}
-
+/* #region Welcome */
 #welcome-gallery {
-    background-color: #312F2F;
+    padding: 40px;
 }
-/*--------- End Welcome Section -------*/
+/* #endregion Welcome */
 
-/*--------- Follow Section -------*/
-#social-col {
-    background-color: blue;
-}
-
-#insta-col {
-    background-color: gold;
-}
-
+/* #region Follow */
 #insta-gallery .insta-post {
     max-width: 180px;
     margin: 5px;
 }
 
 #insta-gallery {
-    /* background-color: red; */
     position: relative;
     margin: auto;
     width: 570px;
@@ -134,79 +135,84 @@ body {
     outline: none;
 }
 
+#social-row {
+    margin-top: 40px;
+}
+
+#social-col {
+    text-align: right !important;
+}
+
 #social-row a {
     font-size: 35px;
-}
-/*--------- End Follow Section -------*/
-
-/*--------- Footer Section -------*/
-footer {
-    background-color: #454343;
-}
-
-#footer-row {
-    padding: 25px 50px 15px 80px;
-}
-
-#footer-branding {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.9em;
+    border-radius: 50%;
     color: white;
-    padding-left: 40px;
+    transition: transform .2s;
+    margin-right: 20px;
 }
 
-#footer-logo {
-    max-height: 60px;
+#social-row a:hover {
+    transform: scale(1.2);
 }
 
-#footer-branding h2 {
-    font-family: 'Helvetica';
-    font-weight: bold;
-    font-size: 25px;
-    margin-top: 20px;
+.fa-facebook-f {
+    background-color: #4060A5;
 }
 
-#footer-branding p {
-    font-size: 12px;
+.fa-instagram {
+    background-color: #E1306C;
 }
 
-#footer-nav ul {
-    height: 100%;
-    vertical-align: middle;
-    list-style: none;
-    text-transform: uppercase;
-    margin-top: 10%;
+.fa-youtube {
+    background-color: #c4302b;
 }
 
-#footer-nav ul li {
-    margin-bottom: -5px;
-    font-family: 'SF Pro Text';
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
+.fa-twitter {
+    background-color: #00ABE3;
 }
+/* #endregion Follow */
 
-#footer-nav ul li a {
-    color: white;
-}
+@media only screen and (max-width: 540px) {
+    #welcome-gallery {
+        padding: 0;
+    }
+    
+    #social-col {
+        text-align: left !important;
+    }
 
-#footer-contact {
-    position: relative;
-}
+    #social-row a {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        margin-right: 15px;
+    }
 
-#partner-logos img{
-    max-width: 95px;
-    margin-right: 15px;
-}
+    #insta-gallery .insta-post {
+        max-width: 130px;
+        margin: 5px;
+    }
 
-#quick-links {
-    font-size: 25px;
-    /* margin-bottom: 50px; */
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-}
+    #insta-gallery {
+        position: relative;
+        margin: auto;
+        width: 280px;
+        padding: 0px 0px 30px 0px;
+    }
 
-#quick-links a {
-    margin-right: 30px;
-    color: white;
+    #prev-btn {
+        font-size: 40px;
+        margin-left: -42px;
+    }
+
+    #next-btn {
+        font-size: 40px;
+        right: 0;
+        margin-right: -42px;
+    }
 }
-/*--------- End Footer Section -------*/
