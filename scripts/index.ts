@@ -117,20 +117,12 @@ class InstaGallery {
     displayPhotos(startIndex: number) {
         // Only request for more photos when we need them
         if (startIndex + this._displayQty > this._imagesLoaded.length) {
-            let placeholder = $('<div>').addClass('spinner-border').css({
-                'width': '3rem',
-                'height': '3rem',
-            });
-            
-            this._galleryContainer.append(placeholder);
             this._getPhotos()
             .then(() => {
                 for (let i = startIndex; i < Math.min(this._imagesLoaded.length, startIndex + this._displayQty); i++) {
                     this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
                 }
             });
-
-            this._galleryContainer.append(placeholder);
         } else {
             for (let i = startIndex; i < startIndex + this._displayQty; i++) {
                 this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);

@@ -94,18 +94,12 @@ var InstaGallery = /** @class */ (function () {
         var _this = this;
         // Only request for more photos when we need them
         if (startIndex + this._displayQty > this._imagesLoaded.length) {
-            var placeholder = $('<div>').addClass('spinner-border').css({
-                'width': '3rem',
-                'height': '3rem'
-            });
-            this._galleryContainer.append(placeholder);
             this._getPhotos()
                 .then(function () {
                 for (var i = startIndex; i < Math.min(_this._imagesLoaded.length, startIndex + _this._displayQty); i++) {
                     _this._buildPostElem(_this._imagesLoaded[i]).appendTo(_this._galleryContainer);
                 }
             });
-            this._galleryContainer.append(placeholder);
         }
         else {
             for (var i = startIndex; i < startIndex + this._displayQty; i++) {

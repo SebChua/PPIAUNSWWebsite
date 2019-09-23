@@ -1,0 +1,39 @@
+/* #region Navbar */
+.navbar {
+    font-size: 0.9rem;
+}
+
+.navbar-brand img {
+    height: 3.5rem;
+    padding-left: 40px;
+}
+
+.navbar-nav li {
+    padding-right: 0.7rem;
+}
+
+.navbar-toggler {
+    border-color: transparent !important;
+    margin-right: 10px;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+/* #endregion Navbar */
+@media only screen and (max-width: 540px) {
+    .navbar-brand img {
+        padding: 0;
+        height: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 20px;
+        margin-right: 20px;
+    }
+}
