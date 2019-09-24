@@ -1,0 +1,145 @@
+body {
+    background-color: #E5E5E5 !important;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Nunito', 'sans-serif' !important;
+    font-weight: 700;
+}
+
+/* #region Vision-Mission */
+#vision-mission {
+    background-image: url('../assets/sliderimg/slide2.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+#vision {
+    background-color: rgba(180,75,79,0.9);
+}
+
+#vision:hover > h2 {
+    transform: translateY(-200%);
+}
+
+#vision:hover > #vision-text {
+    opacity: 1;
+    transform: translateY(-80%);
+}
+
+#mission {
+    background-color: rgba(0,0,0,0.8);
+}
+
+#mission:hover > h2 {
+    transform: translateY(-200%);
+}
+
+#mission:hover > #mission-text {
+    opacity: 1;
+    transform: translateY(-60%);
+}
+
+.vision-mission-header {
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 500ms;
+    margin: auto;
+    width: 100%;
+}
+
+.vision-mission-text {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 400ms, transform 500ms;
+    width: 100%;
+    top: 60%;
+    margin: auto;
+    font-size: 1.1rem;
+}
+/* #endregion Vision Mission */
+
+/* #region Meet-The-Team */
+#meet-the-team h1 {
+    text-align: center;
+    font-size: 3.2rem;
+}
+
+#meet-the-team {
+    margin: 50px 150px;
+}
+
+.division {
+    margin: 40px 0;
+}
+
+.division-name {
+    border-right: 3px solid black;
+    margin-right: 20px;
+}
+
+.division-name h2 {
+    font-family: 'Nunito', 'sans-serif' !important;
+    font-weight: 700;
+    font-size: 2.1rem;
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.profile {
+    width: 180px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    /* background-color: green; */
+    transition: transform 200ms, box-shadow 300ms;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3);
+}
+
+.profile:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 24px 0 rgba(0,0,0,0.3);
+}
+
+.profile h3 {
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 10px 10px 0px 10px;
+}
+
+.profile h4 {
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0 10px;
+}
+/* #endregion Meet-The-Team */
+
+@media only screen and (max-width: 600px) {
+    .division-name h2 {
+        position: relative;
+        text-align: center;
+    }
+
+    .profile {
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
