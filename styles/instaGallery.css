@@ -1,23 +1,27 @@
+#insta-container {
+    position: relative;
+}
+
 #insta-gallery {
     position: relative;
     margin: auto;
-    width: 510px;
-    height: 510px;
+    width: 420px;
+    height: 420px;
 }
 
 #insta-gallery .insta-post {
-    max-width: 160px;
+    max-width: 130px;
     margin: 5px;
 }
 
 #prev-btn {
-    font-size: 50px;
+    font-size: 40px;
     border: none;
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: -55px;
+    /* margin-left: -45px; */
     z-index: 10;
     background-color: transparent;
 }
@@ -27,14 +31,14 @@
 }
 
 #next-btn {
-    font-size: 50px;
+    font-size: 40px;
     border: none;
     cursor: pointer;
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
     right: 0;
-    margin-right: -55px;
+    /* margin-right: 0px; */
     z-index: 10;
     background-color: transparent;
 }

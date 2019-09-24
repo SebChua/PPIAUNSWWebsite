@@ -1,10 +1,3 @@
-$(document).ready(() => {
-    new InstaGallery(9).addToContainer($('#content-section'));
-});
-
-/**
- * 
- */
 class InstaGallery {
     private _prevButton: JQuery;
     private _nextButton: JQuery;
@@ -23,7 +16,7 @@ class InstaGallery {
             client_secret: '5e5336a144e446aa8bcae5105b73f99d',
             redirect_uri: 'http://ppia-unsw.org/',
             response_type: 'code',
-            access_token: '1161706668.71f50f8.4acfb1cd60eb47ccbfadcf26c34f0e84'
+            access_token: '1161706668.71f50f8.b022d5c8d1ee43678fcf45eb16968396'
         };
 
         this._prevButton = $('<button>').attr({
@@ -64,6 +57,8 @@ class InstaGallery {
 
     private _getPhotos() {
         let request_url = this._nextUrl ? this._nextUrl : this._apiUrl;
+
+
     
         return fetch(request_url).then(response => {
             return response.json();
@@ -87,6 +82,12 @@ class InstaGallery {
         this.displayPhotos(0);
     }
 
+    private _buildPostElem(post: InstaPost): JQuery {
+        let post_elem = $('<a>').attr('href', post.insta_url).attr('target', '_blank');
+        $('<img>').attr('src', post.img_url).addClass('insta-post animated fadeIn').appendTo(post_elem);
+        return post_elem;
+    }
+
     // Pre-condition: startIndex >= 0
     displayPhotos(startIndex: number) {
         // Only request for more photos when we need them
@@ -94,16 +95,12 @@ class InstaGallery {
             this._getPhotos()
             .then(() => {
                 for (let i = startIndex; i < Math.min(this._imagesLoaded.length, startIndex + this._displayQty); i++) {
-                    let link_elem = $('<a>').attr('href', this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(this._galleryContainer);
-                    $('<img>').attr('src', this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                    $('<br>').appendTo($('body'));
+                    this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
                 }
             });
         } else {
             for (let i = startIndex; i < startIndex + this._displayQty; i++) {
-                let link_elem = $('<a>').attr('href', this._imagesLoaded[i].insta_url).attr('target', '_blank').appendTo(this._galleryContainer);
-                $('<img>').attr('src', this._imagesLoaded[i].img_url).addClass('insta-post').appendTo(link_elem);
-                $('<br>').appendTo($('body'));
+                this._buildPostElem(this._imagesLoaded[i]).appendTo(this._galleryContainer);
             }
         }
     }
@@ -113,3 +110,5 @@ interface InstaPost {
     img_url: string;
     insta_url: string;
 }
+
+export = InstaGallery;

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
   <link href="https://fonts.googleapis.com/css?family=Nunito:700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/animate.css">
   <link rel="stylesheet" href="../styles/index.css">
@@ -19,145 +19,65 @@
 </head>
 
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar fixed-top navbar-expand-xl navbar-dark">
-      <a class="navbar-brand" href="#"><img id="logo" alt="Brand" src="../assets/logowhite.png"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">ABOUT US</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">MEMBERS BENEFITS</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">CAREERS</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">NEWSLETTER</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">ICON</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">CONTACT US</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
   <div id="main-slider" class="animated fadeIn">
     <div class="overlay text-center">
       <div id="hero-message">
         <!-- <h2>Exceed</h2> -->
-        <h1>PPIA <span style="color: #CA242B;">UNSW</span></h1>
-        <h2>Exceed Limitations</h2>
+        <h1 class="animated fadeIn">PPIA <span style="color: #CA242B;">UNSW</span></h1>
+        <h2 class="animated fadeIn">Exceed Limitations</h2>
       </div>
     </div>
-    <!-- <img id="slider-img" src="../assets/sliderimg/slide1.jpg"> -->
   </div>
 
   <!-- Welcome -->
-  <div id="welcome" class="container-fluid">
+  <div id="welcome" class="container">
     <div class="row">
       <div id="welcome-gallery" class="col-sm"></div>
-      <div id="welcome-text" class="col-sm order-sm-2 order-first text-block px-5 py-5">
-      <h1>Welcome to PPIA UNSW!</h1>
-        <p>Perhimpunan Pelajar Indonesia Australia (PPIA) UNSW is an organisation with 
-          the goal of strengthening the bonds among Indonesian students at UNSW and 
-          introducing the diversity of Indonesian culture to other students on campus. 
-        </p>
+      <div id="welcome-text" class="col-sm order-sm-2 order-first text-block">
+        <div class='vertical-center'>
+          <h1>Welcome to PPIA UNSW!</h1>
+          <p>Perhimpunan Pelajar Indonesia Australia (PPIA) UNSW is an organisation with 
+            the goal of strengthening the bonds among Indonesian students at UNSW and 
+            introducing the diversity of Indonesian culture to other students on campus. 
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Upcoming Events -->
-  <!-- <div id="upcoming-events" class="container-fluid text-center">
-    <h1>Upcoming Events</h1>
-  </div> -->
+  <hr>
 
   <!-- Follow Us -->
-  <div id="follow-us" class="container-fluid">
+  <div id="follow-us" class="container">
     <div class="row">
-      <div id="social-col" class="col-lg text-block px-5 py-5">
-        <h1>Follow Us</h1>
-        <p>All our events are announced through our Facebook and Instagram pages so 
-          make sure you follow us through our social media links below to make sure 
-          you don't miss out on anything!</p>
-        <div id="social-row" class="text-center">
-          <a href="https://www.facebook.com/groups/ppia.unsw/" class="fab fa-facebook-f"></a>
-          <a href="https://www.instagram.com/ppiaunsw/" class="fab fa-instagram"></a>
-          <a href="https://www.youtube.com/user/ppiaunsw" class="fab fa-youtube"></a>
-          <a href="https://twitter.com/ppia_unsw" class="fab fa-twitter"></a>
+      <div id="social-col" class="col-lg text-block">
+        <div class="vertical-center">
+          <h1>Follow Us</h1>
+          <p>All our events are announced through our Facebook and Instagram pages so 
+            make sure you follow us through our social media links below to make sure 
+            you don't miss out on anything!</p>
+          <div id="social-row" class="text-center">
+            <a href="https://www.facebook.com/groups/ppia.unsw/" class="fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/ppiaunsw/" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/user/ppiaunsw" class="fab fa-youtube"></a>
+            <a href="https://twitter.com/ppia_unsw" class="fab fa-twitter"></a>
+          </div>
         </div>
       </div>
       <div id="insta-col" class="col-lg">
-        <div id="insta-gallery"></div>
+        <div id="insta-container"></div>
       </div>
     </div>
   </div>
 
-  <footer class="container-fluid">
-    <div id="footer-row" class="row">
-      <!-- Footer Logo and Org Details -->
-      <div id="footer-branding" class="col-lg-3">
-        <img id="footer-logo" class="img-fluid" alt="Brand" src="../assets/logo_red.png">
-        <h2>PPIA <span style="color: #CA242B;">UNSW</span></h2>
-        <p>UNSW Sydney,<br>Kensington, NSW<br>2052</p>
-        <p style="font-size: 9px;"><i class="fas fa-copyright"></i> 2019 PPIA UNSW. All Rights Reserved.</p>
-      </div>
-      
-      <!-- Footer Nav -->
-      <div id="footer-nav" class="col-lg-3">
-          <ul>
-            <li><a class="nav-link active" href="#">Home</a></li>
-            <li><a class="nav-link" href="#">About Us</a></li>
-            <li><a class="nav-link" href="#">Members Benefits</a></li>
-            <li><a class="nav-link" href="#">Careers</a></li>
-            <li><a class="nav-link" href="#">Newsletter</a></li>
-            <li><a class="nav-link" href="#">ICON</a></li>
-            <li><a class="nav-link" href="#">Contact Us</a></li>
-          </ul>
-      </div>
-
-      <!-- Logos and Footer Social Row -->
-      <div id="footer-contact" class="text-right col-lg-6">
-        <div id="partner-logos">
-          <img src="../assets/garuda.png" class="img-fluid" alt="KJRI Logo">
-          <img src="../assets/unsw.png" class="img-fluid" alt="UNSW Logo">
-          <img src="../assets/arc.jpg" class="img-fluid" alt="Arc Logo" style="height: 60px;">
-          <img src="../assets/ppia-nsw-new.png" class="img-fluid" alt="PPIA NSW Logo">
-          <img src="../assets/ppia-logo.png" class="img-fluid" alt="PPIA Logo">
-        </div>
-
-        <div id="quick-links">
-          <a href="mailto:unsw.ppia@gmail.com" class="fas fa-envelope"></a>
-          <a href="https://www.facebook.com/groups/ppia.unsw/" class="fab fa-facebook-f"></a>
-          <a href="https://www.instagram.com/ppiaunsw/" class="fab fa-instagram"></a>
-          <a href="https://www.youtube.com/user/ppiaunsw" class="fab fa-youtube"></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <footer class="container-fluid"></footer>
 
   <!-- Necessary Scripts -->
   <script src="https://kit.fontawesome.com/bac6ff0a49.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+  <script src="../scripts/require.js"></script>
   <script type="text/javascript" src="../scripts/index.js"></script>
 </body>
 </html>

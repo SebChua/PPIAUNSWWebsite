@@ -4,9 +4,17 @@ body {
 }
 
 h1 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: 'Nunito', 'sans-serif' !important;
     font-weight: 700;
+}
+
+hr {
+    width: 80%;
+    margin: auto;
+    border: none;
+    background-color: black;
+    
 }
 
 .text-block h1 {
@@ -18,6 +26,19 @@ h1 {
     line-height: 1.7;
     font-size: 1em;
 }
+
+.container {
+    margin: 50px 0;
+}
+
+.vertical-center {
+    position: absolute;
+    /* background-color: red; */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
 
 /* #region Hero Section */
 #main-slider {
@@ -45,19 +66,21 @@ h1 {
     width: 100%;
 }
 
-#hero-message h2 {
-    font-family: 'SF Pro Text';
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-}
-
 #hero-message h1 {
     font-family: 'Helvetica' !important;
     font-weight: bold;
     font-size: 100px;
     color: white;
     letter-spacing: -3px;
+    animation-delay: 800ms;
+}
+
+#hero-message h2 {
+    font-family: 'SF Pro Text';
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    animation-delay: 1200ms;
 }
 
 #slider-img {
@@ -68,8 +91,12 @@ h1 {
 /* #endregion Hero Section */
 
 /* #region Welcome */
+#welcome {
+    /* margin: 0 50px; */
+}
+
 #welcome-gallery {
-    padding: 40px;
+    /* padding: 50px; */
 }
 /* #endregion Welcome */
 
@@ -84,6 +111,7 @@ h1 {
 
 #social-col {
     text-align: right !important;
+    /* padding-right: 100px !important; */
 }
 
 #social-row a {
@@ -128,6 +156,11 @@ h1 {
     #hero-message h2 {
         font-size: 1.1rem;
     }
+
+    .vertical-center {
+        position: relative;
+        top: 40%;
+    }
     
     #welcome-gallery {
         padding: 0;
@@ -142,5 +175,14 @@ h1 {
         height: 50px;
         font-size: 25px;
         margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 20px;
+        margin-right: 20px;
     }
 }

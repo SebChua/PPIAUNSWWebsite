@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "amd",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true
     },
     "files": [
-        "index.ts"
+        "InstaGallery.ts",
+        "index.ts",
+        "about.ts"
     ]
 }
